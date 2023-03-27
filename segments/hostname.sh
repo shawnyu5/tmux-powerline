@@ -15,17 +15,18 @@ __process_settings() {
 		export TMUX_POWERLINE_SEG_HOSTNAME_FORMAT="${TMUX_POWERLINE_SEG_HOSTNAME_FORMAT_DEFAULT}"
 	fi
 }
-run_segment() {
-	__process_settings
-	local opts=""
-	if [ "$TMUX_POWERLINE_SEG_HOSTNAME_FORMAT" == "short" ]; then
-		if shell_is_osx || shell_is_bsd; then
-			opts="-s"
-		else
-			opts="--short"
-		fi
-	fi
+# NOTE: remove host name here
+# run_segment() {
+	# __process_settings
+	# local opts=""
+	# if [ "$TMUX_POWERLINE_SEG_HOSTNAME_FORMAT" == "short" ]; then
+		# if shell_is_osx || shell_is_bsd; then
+			# opts="-s"
+		# else
+			# opts="--short"
+		# fi
+	# fi
 
-	hostname ${opts}
-	return 0
-}
+	# hostname ${opts}
+	# return 0
+# }
